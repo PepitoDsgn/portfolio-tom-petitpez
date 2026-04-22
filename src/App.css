@@ -1,38 +1,240 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+  background-color: #1a1a2e;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-links a.active {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 50, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hero-btn:hover {
+  background-color: darkred;
+}
+
+.about-section {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.about-card {
+  display: flex;
+  gap: 4rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2.5rem 3rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.about-col,
+.skills-col {
+  flex: 1;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.6rem;
+}
+
+.section-divider {
+  height: 3px;
+  width: 100%;
+  background: #1a73e8;
+  margin-bottom: 1.5rem;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.about-col p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.skill {
+  margin-bottom: 1.2rem;
+}
+
+.skill-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+.skill-bar-bg {
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+.footer {
+  background-color: #1a1a2e;
+  color: #ccc;
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-col p {
+  font-size: 0.82rem;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-col ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.footer-icons a:hover {
+  opacity: 1;
 }
