@@ -78,11 +78,11 @@ function App() {
       <header className="navbar">
         <div className="navbar-brand">JOHN DOE</div>
         <nav className="navbar-links">
-          <Link to="/">HOME</Link>
-          <Link to="/services">SERVICES</Link>
-          <Link to="/portfolio">PORTFOLIO</Link>
-          <Link to="/contact">CONTACT</Link>
-          <Link to="/mentions">MENTIONS LÉGALES</Link>
+          <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/portfolio">Portfolio</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/mentions">Mentions Légales</Link>
         </nav>
       </header>
 

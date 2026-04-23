@@ -40,7 +40,12 @@ body {
   letter-spacing: 1px;
 }
 
+.navbar-brand:hover {
+  color: white;
+}
+
 .navbar-links {
+  text-transform: uppercase;
   display: flex;
   gap: 2rem;
 }
