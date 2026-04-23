@@ -36,7 +36,7 @@ function Home() {
   return (
     <>
       <section className="hero" style={{ backgroundImage: `url(${heroBg})` }}>
-        <div className="hero-overlay" />
+        <div className="hero-overlay-home" />
         <div className="hero-content">
           <h1>Bonjour, je suis John Doe</h1>
           <h2>Développeur web full stack</h2>

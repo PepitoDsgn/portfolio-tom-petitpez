@@ -68,6 +68,11 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
+}
+
+.hero-overlay-home {
+  position: absolute;
+  inset: 0;
   background: rgba(20, 20, 50, 0.6);
 }
 
@@ -350,4 +355,85 @@ body {
 
 .footer-icons a:hover {
   opacity: 1;
+}
+
+.hero-banner {
+  margin-top: 56px;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.services-section {
+  padding: 3.5rem 2rem 4rem;
+  text-align: center;
+  background: #fff;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+}
+
+.page-header-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.page-header-subtitle {
+  font-size: 0.92rem;
+  color: #555;
+  margin-bottom: 1.1rem;
+}
+
+.page-header-divider {
+  height: 3px;
+  width: 140px;
+  background: #1a73e8;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  flex: 1;
+  min-width: 240px;
+  max-width: 320px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 2.5rem 1.75rem 2rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.service-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a73e8;
+  margin-bottom: 0.9rem;
+}
+
+.service-desc {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.7;
 }
