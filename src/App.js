@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from 'react-router-dom';
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import './App.css';
 import heroBg from './images/hero-bg.jpg';
 import aboutImg from './images/john-doe-about.jpg';
@@ -8,11 +9,11 @@ import Services from './pages/Services';
 import Mentions from './pages/Mentions';
 
 const skills = [
-  { name: 'HTML5', percent: 90, color: 'red' },
-  { name: 'CSS3', percent: 80, color: 'lightblue' },
-  { name: 'JAVASCRIPT', percent: 70, color: 'yellow' },
-  { name: 'PHP', percent: 60, color: 'green' },
-  { name: 'REACT', percent: 50, color: 'blue' },
+  { name: 'HTML5', percent: 90, variant: 'danger' },
+  { name: 'CSS3', percent: 80, variant: 'info' },
+  { name: 'JAVASCRIPT', percent: 70, variant: 'warning' },
+  { name: 'PHP', percent: 60, variant: 'success' },
+  { name: 'REACT', percent: 50, variant: 'primary' },
 ];
 
 const footerLinks = [
@@ -61,12 +62,7 @@ function Home() {
             {skills.map((skill) => (
               <div key={skill.name} className="skill">
                 <div className="skill-label">{skill.name} {skill.percent}%</div>
-                <div className="skill-bar-bg">
-                  <div
-                    className="skill-bar-fill"
-                    style={{ width: `${skill.percent}%`, backgroundColor: skill.color }}
-                  />
-                </div>
+                <ProgressBar now={skill.percent} variant={skill.variant} />
               </div>
             ))}
           </div>
@@ -90,13 +86,15 @@ function App() {
         </nav>
       </header>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/mentions" element={<Mentions />} />
-      </Routes>
+      <div className="page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/mentions" element={<Mentions />} />
+        </Routes>
+      </div>
 
       <footer className="footer">
         <div className="footer-col">
