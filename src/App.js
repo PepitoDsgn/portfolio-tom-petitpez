@@ -1,7 +1,11 @@
-import React from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import heroBg from './images/hero-bg.jpg';
 import aboutImg from './images/john-doe-about.jpg';
+import Contact from './pages/Contact';
+import Portfolio from './pages/Portfolio';
+import Services from './pages/Services';
+import Mentions from './pages/Mentions';
 
 const skills = [
   { name: 'HTML5', percent: 90, color: 'red' },
@@ -11,7 +15,13 @@ const skills = [
   { name: 'REACT', percent: 50, color: 'blue' },
 ];
 
-const footerLinks = ['Accueil', 'Services', 'Portfolio', 'Me contacter', 'Mentions légales'];
+const footerLinks = [
+  { label: 'Accueil', path: '/' },
+  { label: 'Services', path: '/services' },
+  { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Me contacter', path: '/contact' },
+  { label: 'Mentions légales', path: '/mentions' },
+];
 
 const footerProjects = [
   'Fresh Food',
@@ -22,26 +32,15 @@ const footerProjects = [
   "Maquette d'un site",
 ];
 
-function App() {
+function Home() {
   return (
-    <div className="App">
-      <header className="navbar">
-        <div className="navbar-brand">JOHN DOE</div>
-        <nav className="navbar-links">
-          <a href="#home" className="active">HOME</a>
-          <a href="#services">SERVICES</a>
-          <a href="#portfolio">PORTFOLIO</a>
-          <a href="#contact">CONTACT</a>
-          <a href="#legal">MENTIONS LÉGALES</a>
-        </nav>
-      </header>
-
+    <>
       <section className="hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="hero-overlay" />
         <div className="hero-content">
           <h1>Bonjour, je suis John Doe</h1>
           <h2>Développeur web full stack</h2>
-          <button className="hero-btn">En savoir plus</button>
+          <Link to="/contact" className="hero-btn">En savoir plus</Link>
         </div>
       </section>
 
@@ -73,6 +72,31 @@ function App() {
           </div>
         </div>
       </section>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <div className="App">
+      <header className="navbar">
+        <div className="navbar-brand">JOHN DOE</div>
+        <nav className="navbar-links">
+          <Link to="/">HOME</Link>
+          <Link to="/services">SERVICES</Link>
+          <Link to="/portfolio">PORTFOLIO</Link>
+          <Link to="/contact">CONTACT</Link>
+          <Link to="/mentions">MENTIONS LÉGALES</Link>
+        </nav>
+      </header>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/mentions" element={<Mentions />} />
+      </Routes>
 
       <footer className="footer">
         <div className="footer-col">
@@ -98,7 +122,7 @@ function App() {
           <h4>Liens utiles</h4>
           <ul>
             {footerLinks.map((link) => (
-              <li key={link}><a href="#link">{link}</a></li>
+              <li key={link.label}><Link to={link.path}>{link.label}</Link></li>
             ))}
           </ul>
         </div>
