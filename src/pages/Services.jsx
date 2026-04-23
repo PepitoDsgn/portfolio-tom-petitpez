@@ -25,36 +25,21 @@ function Services() {
   const [services] = useState([
     {
       id: 'ux',
-      icon: (
-        <svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="#1a73e8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 20h9" />
-          <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-        </svg>
-      ),
+      icon: <i className="bi bi-pencil-fill" style={{ fontSize: '2.5rem', color: '#1a73e8' }}></i>,
       title: 'UX Design',
       description:
         "L'UX Design est une discipline qui consiste à concevoir des produits (sites web, applications mobiles, logiciels, objets connectés, etc.) en plaçant l'utilisateur au centre des préoccupations. L'objectif est de rendre l'expérience utilisateur la plus fluide et agréable possible.",
     },
     {
       id: 'dev',
-      icon: (
-        <svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="#1a73e8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="16 18 22 12 16 6" />
-          <polyline points="8 6 2 12 8 18" />
-        </svg>
-      ),
+      icon: <i className="bi bi-code-slash" style={{ fontSize: '2.5rem', color: '#1a73e8' }}></i>,
       title: 'Développement web',
       description:
         'Le développement de sites web consiste à créer des sites internet en utilisant des langages de programmation (HTML, CSS, JavaScript, PHP, etc.) et des frameworks (Bootstrap, React, Angular, etc.).',
     },
     {
       id: 'seo',
-      icon: (
-        <svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="#1a73e8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="8" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        </svg>
-      ),
+      icon: <i className="bi bi-search" style={{ fontSize: '2.5rem', color: '#1a73e8' }}></i>,
       title: 'Référencement',
       description:
         "Le référencement naturel (SEO) est une technique qui consiste à optimiser un site web pour le faire remonter dans les résultats des moteurs de recherche (Google, Bing, Yahoo, etc.). L'objectif est d'attirer un maximum de visiteurs qualifiés sur le site.",

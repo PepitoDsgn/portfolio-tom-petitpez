@@ -8,10 +8,10 @@ const sections = [
       <div className="mentions-content">
         <p className="mentions-name">John Doe</p>
         <ul className="coords-list">
-          <li><span className="coords-icon">🗒</span> 40 rue Laure Diebold</li>
-          <li><span className="coords-icon">📍</span> 69009 Lyon, France</li>
-          <li><span className="coords-icon">📞</span> 10 20 30 40 50</li>
-          <li><span className="coords-icon">✉</span> john.doe@gmail.com</li>
+          <li><i className="bi bi-house-fill coords-icon"></i> 40 rue Laure Diebold</li>
+          <li><i className="bi bi-geo-alt-fill coords-icon"></i> 69009 Lyon, France</li>
+          <li><i className="bi bi-telephone-fill coords-icon"></i> 10 20 30 40 50</li>
+          <li><i className="bi bi-envelope-fill coords-icon"></i> john.doe@gmail.com</li>
         </ul>
       </div>
     ),
@@ -24,7 +24,7 @@ const sections = [
         <p className="mentions-name">alwaysdata</p>
         <p className="mentions-address">91 Rue du Faubourg Saint-Honoré, 75008 Paris</p>
         <p className="mentions-link">
-          <span className="coords-icon">🌐</span>{' '}
+          <i className="bi bi-globe coords-icon"></i>{' '}
           <a href="https://www.alwaysdata.com" target="_blank" rel="noreferrer">
             www.alwaysdata.com
           </a>
