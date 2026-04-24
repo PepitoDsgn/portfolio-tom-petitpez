@@ -65,6 +65,7 @@ body {
 
 .navbar-links a.active {
   color: white;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -339,7 +340,7 @@ body {
 }
 
 .footer-col ul li a:hover {
-  text-decoration: underline;
+  font-weight: 700;
 }
 
 .footer-icons {
@@ -568,17 +569,192 @@ body {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* GitHub modal */
 .modal-avatar {
   width: 220px;
   height: 220px;
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
+}
+
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 110;
+}
+
+.navbar-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.navbar-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 992px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-card {
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  .form-card {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background-color: #1a1a2e;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0;
+    z-index: 100;
+  }
+
+  .navbar-links.navbar-links--open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    padding: 0.75rem 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-banner {
+    height: 160px;
+  }
+
+  .about-card {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .form-card {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .contact-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+
+  .coords-list li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero-btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-banner {
+    height: 120px;
+  }
+
+  .page-header-title {
+    font-size: 1.5rem;
+  }
+
+  .about-card,
+  .form-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .portfolio-section,
+  .services-section {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  .navbar {
+    padding: 0 1rem;
+  }
 }

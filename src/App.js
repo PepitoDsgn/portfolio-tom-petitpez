@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -132,16 +132,27 @@ function Home() {
 }
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="App">
       <header className="navbar">
         <div className="navbar-brand">JOHN DOE</div>
-        <nav className="navbar-links">
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/portfolio">Portfolio</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/mentions">Mentions Légales</Link>
+        <button
+          className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav className={`navbar-links${menuOpen ? ' navbar-links--open' : ''}`}>
+          <NavLink to="/" end onClick={() => setMenuOpen(false)}>Home</NavLink>
+          <NavLink to="/services" onClick={() => setMenuOpen(false)}>Services</NavLink>
+          <NavLink to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</NavLink>
+          <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+          <NavLink to="/mentions" onClick={() => setMenuOpen(false)}>Mentions Légales</NavLink>
         </nav>
       </header>
 
@@ -188,7 +199,7 @@ function App() {
           <h4>Mes dernières réalisations</h4>
           <ul>
             {footerProjects.map((project) => (
-              <li key={project}><a href="#project">{project}</a></li>
+              <li key={project}><Link to="/portfolio">{project}</Link></li>
             ))}
           </ul>
         </div>
